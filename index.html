@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ToDoアプリ</title>
+</head>
+<body><h1>ToDo</h1><input id="task">
+<button onclick="addTask()">追加</button><ul id="list"></ul><script>
+function addTask() {
+  const input = document.getElementById("task");
+  const li = document.createElement("li");
+
+  li.textContent = input.value;
+
+  li.onclick = function() {
+    li.remove();
+  };
+
+  document.getElementById("list").appendChild(li);
+  input.value = "";
+}
+</script></body>
+</html>
